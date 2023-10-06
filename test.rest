@@ -1,0 +1,19 @@
+###
+
+POST http://localhost:5000/caption
+Content-Type: application/json
+
+{
+    "image_url": "http://images.cocodataset.org/test-stuff2017/000000009384.jpg"
+}
+
+###
+
+POST http://localhost:5000/caption
+Content-Type: application/json
+
+{
+    "image_url": "https://static.todamateria.com.br/upload/ur/so/ursopolarreproducao-cke.jpg?auto_optimize=low"
+}
+
+###
