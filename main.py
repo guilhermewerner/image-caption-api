@@ -44,4 +44,4 @@ def caption_image():
         return jsonify({"error": "Missing 'image_url'"}), 400
 
 if __name__ == '__main__':
-    app.run(port=5885)
+    app.run(host='0.0.0.0', port=5885)
