@@ -1,10 +1,10 @@
 ###
 
-POST http://localhost:5000/caption
+POST http://localhost:5885/caption
 Content-Type: application/json
 
 {
-    "image_url": "http://images.cocodataset.org/test-stuff2017/000000009384.jpg"
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQS2DKvqhyVtI8MMAC8j2oP-2-JRryjBkNGhA&usqp=CAU"
 }
 
 ###
@@ -13,7 +13,7 @@ POST https://ti6.fornaxhost.net/caption
 Content-Type: application/json
 
 {
-    "image_url": "https://static.todamateria.com.br/upload/ur/so/ursopolarreproducao-cke.jpg?auto_optimize=low"
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQS2DKvqhyVtI8MMAC8j2oP-2-JRryjBkNGhA&usqp=CAU"
 }
 
 ###
