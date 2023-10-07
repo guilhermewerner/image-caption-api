@@ -15,9 +15,9 @@ device = "cuda" if torch.cuda.is_available() else "cpu"
 print(device)
 
 # Carregar o modelo, tokenizer e processador de imagem
-finetuned_model = VisionEncoderDecoderModel.from_pretrained("nlpconnect/vit-gpt2-image-captioning").to(device)
+finetuned_model = VisionEncoderDecoderModel.from_pretrained("Trabalho/vit-swin-base-224-gpt2-image-captioning").to(device)
 finetuned_tokenizer = GPT2TokenizerFast.from_pretrained("nlpconnect/vit-gpt2-image-captioning")
-finetuned_image_processor = ViTImageProcessor.from_pretrained("nlpconnect/vit-gpt2-image-captioning")
+finetuned_image_processor = ViTImageProcessor.from_pretrained("Trabalho/vit-swin-base-224-gpt2-image-captioning")
 
 # Função para carregar uma imagem
 def load_image(image_path):
