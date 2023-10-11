@@ -51,9 +51,6 @@ def caption_image():
 @app.route('/caption-base64', methods=['POST'])
 def caption_image_base64():
     data = request.get_json()
-
-    print(data)
-
     if 'image_base64' in data:
         image_base64 = re.sub('^data:image/.+;base64,', '', data['image_base64'])
         image_data = base64.b64decode(image_base64)
@@ -64,8 +61,6 @@ def caption_image_base64():
         return jsonify(response)
     else:
         return jsonify({"error": "Missing 'image_base64'"}), 400
-
-
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5885, debug=True)
