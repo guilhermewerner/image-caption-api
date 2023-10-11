@@ -10,6 +10,8 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Image from 'react-bootstrap/Image';
 import Ratio from 'react-bootstrap/Ratio';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 import { useState } from 'react';
 
 export default function Home() {
@@ -58,39 +60,53 @@ export default function Home() {
             <Head>
                 <title>Image Caption</title>
             </Head>
-            <header>
-                <Navbar expand="lg" className="shadow-sm">
+            <div className='wrapper'>
+                <header>
+                    <Navbar expand="lg" className="main-nav shadow-sm">
+                        <Container>
+                            <Navbar.Brand href="/">Image Caption</Navbar.Brand>
+                        </Container>
+                    </Navbar>
+                </header>
+                <main className='mt-3'>
                     <Container>
-                        <Navbar.Brand href="/">Image Caption</Navbar.Brand>
+                        <p className="mb-2">Envie uma imagem para obter sua descrição.</p>
+                        <Form className='my-3'>
+                            <Form.Group className="mb-3">
+                                <Form.Label>Imagem</Form.Label>
+                                <div className='d-flex justify-content-center align-items-center flex-grow-1'>
+                                    <div
+                                        className='d-flex'
+                                        style={{ width: '720px', height: '100%' }}
+                                    >
+                                        <Ratio className='d-flex' aspectRatio="16x9">
+                                            <Image src={imageUrl} />
+                                        </Ratio>
+                                    </div>
+                                </div>
+                            </Form.Group>
+                            <Form.Group className="mb-3" controlId="formUpload">
+                                <Form.Label>Enviar imagem</Form.Label>
+                                <Form.Control type="file" onChange={handleImageChange} />
+                            </Form.Group>
+                            <Form.Group className="mb-3" controlId="formCaption">
+                                <Form.Label>Descrição</Form.Label>
+                                <Form.Control type="text" disabled value={caption ? caption : ""} />
+                            </Form.Group>
+                            <div className='text-end'>
+                                <Button variant="primary" onClick={handleSubmit}>
+                                    Enviar
+                                </Button>
+                            </div>
+                        </Form>
                     </Container>
-                </Navbar>
-            </header>
-            <main className='mt-3'>
-                <Container>
-                    <div className='d-flex justify-content-center align-items-center flex-grow-1'>
-                        <div
-                            className='d-flex'
-                            style={{ width: '480px', height: 'auto' }}
-                        >
-                            <Ratio className='d-flex' aspectRatio="16x9">
-                                <Image src={imageUrl} />
-                            </Ratio>
-                        </div>
-                    </div>
-                    <Form className='my-3'>
-                        <Form.Group className="mb-3" controlId="formBasicEmail">
-                            <Form.Label>Image</Form.Label>
-                            <Form.Control type="file" onChange={handleImageChange} />
-                        </Form.Group>
-                        <div className='text-end'>
-                            <Button variant="primary" onClick={handleSubmit}>
-                                Submit
-                            </Button>
-                        </div>
-                    </Form>
-                    <p className='my-3 text-center'>{caption}</p>
-                </Container>
-            </main>
+                </main>
+                <footer>
+                    <Container className="mb-2 pb-2">
+                        <span className="text-muted">Feito por</span>
+                    </Container>
+                </footer>
+            </div>
         </>
     )
 }
