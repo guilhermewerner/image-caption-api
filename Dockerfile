@@ -1,5 +1,3 @@
-# Copyright (c) TribuFu. All Rights Reserved.
-
 FROM node:18-alpine AS base
 VOLUME /config
 VOLUME /saved
