@@ -7,10 +7,9 @@ VOLUME /saved
 FROM base AS deps
 RUN apk add --no-cache libc6-compat
 WORKDIR /src
-COPY package.json lerna.json yarn.lock ./
+COPY package.json yarn.lock ./
 COPY ./package.json ./package.json
 COPY ./next.config.js ./next.config.js
-COPY ./next-i18next.config.js ./next-i18next.config.js
 RUN yarn --frozen-lockfile
 
 FROM base AS build
