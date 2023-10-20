@@ -39,7 +39,7 @@ export default function Home() {
 
     const handleSubmit = () => {
         if (imageUrl) {
-            fetch("http://localhost:5885/caption-base64", {
+            fetch("https://ti6.fornaxhost.net/caption-base64", {
                 method: "POST",
                 body: JSON.stringify({ image_base64: image64 }),
                 headers: {
@@ -80,7 +80,7 @@ export default function Home() {
                                         style={{ width: '720px', height: '100%' }}
                                     >
                                         <Ratio className='d-flex' aspectRatio="16x9">
-                                            <Image src={imageUrl} />
+                                            <Image src={imageUrl as string} />
                                         </Ratio>
                                     </div>
                                 </div>
